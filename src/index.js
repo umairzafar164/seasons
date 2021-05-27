@@ -30,7 +30,7 @@ class App extends React.Component {
   
   render() {
     return(
-      <div className="border-main">
+      <div>
         {this.ToRender()}
       </div>
     );
