@@ -1,23 +1,32 @@
 import React from "react";
+import './styles.css';
 
-const geSeason = (lat, month) => {
+
+const seasonConfig = {
+  summer: {
+    text: "Oh no! Summers",
+    icon: "massive sun icon",
+  },
+  winter: {
+    text: "Yeaaaaaah! It's winters",
+    icon: "massive snowflake icon",
+  },
+};
+const getSeason = (lat, month) => {
   if (month > 2 && month < 9) {
     return lat > 0 ? "summer" : "winter";
   } else {
     return lat > 0 ? "winter" : "summer";
   }
 };
-
 const SeasonsDisplay = (props) => {
-  const season = geSeason(props.lat, new Date().getMonth());
-  const text =
-    season === "winter" ? "Yeauppy winters are here !" : "Oh damn summers";
-  const icon = season === "winter" ? "snowflake icon" : "sun icon";
+  const season = getSeason(props.lat, new Date().getMonth());
+  const { text, icon } = seasonConfig[season];
   return (
-    <div>
-      <i className={icon}></i>
+    <div className={`SeasonDisplay ${season}`}>
+      <i className={`i1 ${icon}`}></i>
       <h1>{text}</h1>
-      <i className={icon}></i>
+      <i className={`i2 ${icon}`}></i>
     </div>
   );
 };

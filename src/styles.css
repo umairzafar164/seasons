@@ -1,0 +1,31 @@
+.i1{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.i2{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.SeasonDisplay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.winter{
+    background-color: aqua;
+}
+.summer{
+    background-color: coral;
+}
+.SeasonDisplay.winter i{
+    color:lightblue;
+}
+.SeasonDisplay.summer i{
+    color: gold;
+}
+.border-main{
+    border: 5px solid red;
+}
